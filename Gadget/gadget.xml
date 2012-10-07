@@ -1,0 +1,19 @@
+<gadget>
+  <name>FreshBooks</name>
+  <version>2.0</version>
+  <author name="Andrew Flusche">
+    <info url="www.andrewflusche.com" />
+  </author>
+  <copyright>&#169; 2008 Andrew Flusche.</copyright>
+  <description>FreshBooks gadget for Windows Vista Sidebar.</description>
+  <icons>
+    <icon height="64" width="64" src="images/main_icon.png" />
+  </icons>
+  <hosts>
+    <host name="sidebar">
+      <base type="HTML" apiVersion="1.0.0" src="FreshBooks.html" />
+      <permissions>Full</permissions>
+      <platform minPlatformVersion="1.0" />
+    </host>
+  </hosts>
+</gadget>

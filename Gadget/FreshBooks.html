@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Unicode" />
+        <title>FreshBooks Vista Sidebar Gadget</title>
+		<style type="text/css">
+        body
+        {
+            margin: 0;
+            width: 130px;
+            height: 243px;
+			font-family: Verdana;
+            font-size: small;
+        }
+        #gadgetContent
+        {
+            /*margin-top: 10px;*/
+            width: 130px;
+            vertical-align: middle;
+            text-align: center;
+        }
+        </style>
+		
+		<style type="text/css">
+        @import "gadget.css";
+		</style>
+
+		<script type="text/javascript" src="jquery-1.2.6.js" charset="utf-8"></script>
+		<script type="text/javascript" src="utilities.js" charset="utf-8"></script>
+		<script type="text/javascript" src="FreshBooks_jquery.js" charset="utf-8"></script>
+		<script type="text/javascript" src="FreshBooks.js" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+		
+		System.Gadget.onDock = dockStateChanged;
+		System.Gadget.onUndock = dockStateChanged;
+		
+		function dockStateChanged() {
+			if (System.Gadget.docked) {
+				System.Gadget.background = "images/background_clock.png";
+				document.body.style.width = "130px";
+				document.body.style.height = "243px";
+			} else {
+				System.Gadget.background = "images/background_clock_undocked2.png";
+				document.body.style.width = "140px";
+				document.body.style.height = "253px";
+			}
+		}
+		
+		System.Gadget.settingsUI = "settings.html";
+		//System.Gadget.Flyout.file = "flyout.html";
+		
+		//initialize settings variables
+		var sitename, token;
+		
+		//read the settings
+		readSettings();
+		
+		function readSettings() {
+			sitename = System.Gadget.Settings.readString("sitename");
+			token   = System.Gadget.Settings.readString("token");
+		}
+		
+		System.Gadget.onSettingsClosed = settingsClosed;
+		
+		function settingsClosed() {
+			//read the settings back in
+			readSettings();
+			
+			//try to start up the widget.
+			load();
+		}
+		
+		function refreshGadget() {
+			location.href = location.href;
+		}
+		
+		/*
+		function showFlyout() {
+			setElementVisibility("flyoutHide", true);
+			setElementVisibility("flyoutShow", false);
+			System.Gadget.Flyout.show = true;
+		}
+		
+		function hideFlyout() {
+			setElementVisibility("flyoutHide", false);
+			setElementVisibility("flyoutShow", true);
+			System.Gadget.Flyout.show = false;
+		}
+		
+		System.Gadget.Flyout.onHide = hideFlyout;
+		*/
+		</script>
+
+    </head>
+	
+    <body onload="load()">
+        <!-- <g:background id="imgBackground" src="images/background_clock.png"> -->
+		
+		<span id="gadgetContent2">
+		
+			<div id="myfreshbooks" onClick="gotofreshbooks()" alt="Go to my FreshBooks"></div>
+			
+			<div id="update" onClick="window.open('http://www.andrewflusche.com/freshbooks-vista-sidebar-gadget/')">Click to update gadget.</a></div>
+			
+			<div id="count" onclick="editClockedTime()"></div>
+			
+			<input type="text" name="updatedTime" value="0:00:00" id="updatedTime" onblur="updateClockedTime(event)" onkeypress="validateClockedKey(event)" onchange="validateUpdatedTime(event)">
+			
+			<input type="image" id="resetbutton" name="resetbutton" value="Reset" onclick="clocker.reset()" src="images/reset_on.png" alt="Reset timer">
+			<!-- <input type="image" id="resetbutton2" name="resetbutton2" value="Reset" src="images/reset_off.png"> -->
+			
+			<input type="image" id="pausebutton" name="pausebutton" value="Pause" onclick="clocker.stopClock()" src="images/pause_on.png" alt="Pause timer">
+			<input type="image" id="pausebutton2" name="pausebutton2" value="Pause" src="images/pause_off.png">
+
+			<input type="image" id="startbutton" name="startbutton" value="Start" onclick="clocker.startClock()" src="images/start_on.png" alt="Start timer">
+			<input type="image" id="startbutton2" name="startbutton2" value="Start" src="images/start_off.png">
+
+			<select id="Projects" onchange="setTasksFromProject(event)">
+				<option value="-1">Projects</option>
+			</select>
+
+			<select id="Tasks">
+				<option id="option" value="-1">Tasks</option>
+			</select>
+
+			<textarea id="Notes"></textarea>
+			
+			<input type="image" id="submithours" name="submithours" value="Submit" onclick="submitHours()" src="images/record.png" alt="Submit hours">
+			
+			<div id="not"></div>
+
+			<div id="statusmsg" align="center"></div>
+			
+			<div id="submitStatus" align="center"></div>
+			
+			<div id="info"></div>
+			
+			<div id="done"></div>
+			
+			<!---
+			<div id="flyoutShow"><img src="images/leftarrow.png" alt="Show flyout" onClick="showFlyout()"></div>
+			
+			<div id="flyoutHide"><img src="images/rightarrow.png" alt="Hide flyout" onClick="hideFlyout()"></div>
+			--->
+			
+			<div id="refresh"><img src="images/reload.png" alt="Reload gadget" onClick="refreshGadget()"></div>
+				
+		</span>
+		
+		<span id="gadgetContent1">
+		Please enter your FreshBooks address and API token in the settings menu.
+		</span>
+		<!-- </g:background> -->
+    </body>
+</html>

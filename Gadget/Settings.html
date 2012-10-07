@@ -1,0 +1,31 @@
+<HTML>
+    <HEAD>
+    <script language="javascript" type="text/javascript">
+        System.Gadget.onSettingsClosing = SettingsClosing;
+
+        //Save the settings
+        function SettingsClosing(event) {
+            if (event.closeAction == event.Action.commit) {
+                //User has clicked OK so commit the settings
+                System.Gadget.Settings.writeString("sitename", sitename.value);
+                System.Gadget.Settings.writeString("token", token.value);
+            }
+
+            //allow the settings page to close
+            event.cancel = false;
+        }
+
+        function init() {
+            sitename.value = System.Gadget.Settings.readString("sitename");
+            token.value   = System.Gadget.Settings.readString("token");
+        }
+    </SCRIPT>
+    </HEAD>
+
+    <BODY onload="init()" style="width:300px; height:100px; margin:0px">
+		Site name:<br/>
+		<input type="text" id="sitename" name="sitename" value="" width="35">.freshbooks.com<br/><br/>
+		API authentication token:<br/>
+		<input type="text" id="token" name="token" value="" width="35">
+    </BODY>
+</HTML>

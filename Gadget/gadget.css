@@ -1,0 +1,167 @@
+#gadgetContent1 {
+	width: 120px;
+	position: absolute;
+	left: 7px;
+	top: 60px;
+	font-size: 10pt;
+	color: white;
+}
+
+#count {
+	position: absolute;
+	left: 33px;
+	top: 67px;
+    font-size: 16pt;
+    color: white;
+}
+
+#update {
+	position: absolute;
+	top: 55px;
+	left: 5px;
+	width: 123px;
+	color: white;
+	font-size: 9px;
+	visibility: hidden;
+}
+
+#updatedTime {
+	position: absolute;
+	left: 5px;
+	top: 67px;
+	width: 120px;
+	font-size: 16pt;
+}
+
+#Projects, #Tasks {
+	font-size:8pt;
+}
+
+/*
+#updatedTime {
+	width: 100px;
+	text-align: right;
+}
+*/
+
+#resetbutton {
+    position: absolute;
+    top: 29px;
+    left: 62px;
+    width: 20px;
+}
+#resetbutton2 {
+    position: absolute;
+    top: 29px;
+    left: 62px;
+    width: 20px;
+}
+
+#pausebutton {
+    position: absolute;
+    top: 29px;
+    left: 84px;
+    width: 20px;
+}
+#pausebutton2 {
+    position: absolute;
+    top: 29px;
+    left: 84px;
+    width: 20px;
+}
+
+#startbutton {
+    position: absolute;
+    top: 29px;
+    left: 105px;
+    width: 20px;
+}
+#startbutton2 {
+    position: absolute;
+    top: 29px;
+    left: 105px;
+    width: 20px;
+}
+
+#Projects {
+	position: absolute;
+	top: 110px;
+	left: 5px;
+	width: 120px;
+}
+
+#Tasks {
+	position: absolute;
+	top: 132px;
+	left: 5px;
+	width: 120px;
+}
+
+#Notes {
+	position: absolute;
+	top: 154px;
+	left: 5px;
+	width: 120px;
+	height: 58px;
+    font-size: 8pt;
+	font-family: Arial;
+}
+
+#statusmsg {
+	position: absolute;
+	top: 94px;
+	left: 5px;
+	width: 120px;
+	color: white;
+	font-size: 10px;
+}
+
+#submithours {
+	position: absolute;
+	top: 215px;
+	left: 60px;
+}
+
+#submitstatus {
+	position: absolute;
+	top: 220px;
+	left: 20px;
+	width: 120px;
+	color: white;
+	font-size: 10px;
+}
+
+/*
+#flyoutShow {
+    position: absolute;
+	top: 266px;
+	left: 7px;
+}
+
+#flyoutHide {
+    position: absolute;
+	top: 266px;
+	left: 7px;
+}
+*/
+
+#refresh {
+	position: absolute;
+	top: 218px;
+	left: 5px;
+}
+
+#myfreshbooks {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 59px;
+	height: 49px;
+}
+
+/*
+select, textarea {
+	background-color: #194DB5;
+	color: white;
+}
+*/

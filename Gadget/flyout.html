@@ -1,0 +1,24 @@
+<html>
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=Unicode" />
+        <title>FreshBooks Vista Sidebar Gadget - Flyout</title>
+        <link href="flyout.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+		function startUpPage() {
+			//Resize the page
+			document.body.style.width = 150;
+			document.body.style.height = 290;
+			document.body.style.background = "#194DB5";
+			document.body.style.color = "white";
+		}
+		</script>
+    </head>
+    <body onload="startUpPage()">
+        <div id="flyoutBackground">
+            <strong>Contact Lookup</strong><br/><br/>
+            <div id="bodyContent">
+				<input type="text" id="contactinput" name="contactinput"> <input type="image" id="contactsearch" name="contactsearch" value="Search" onclick="searchContacts()" src="images/search.png" alt="Search contacts">
+			</div>
+        </div>
+    </body>
+</html>
